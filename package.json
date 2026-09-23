@@ -1,0 +1,18 @@
+{
+  "name": "introduction-to-grpc",
+  "version": "1.0.0",
+  "description": "Mini-projet d'introduction a gRPC en Node.js",
+  "private": true,
+  "scripts": {
+    "server": "node src/server.js",
+    "client": "node src/client.js",
+    "check": "node check.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.0",
+    "@grpc/proto-loader": "^0.7.13"
+  }
+}

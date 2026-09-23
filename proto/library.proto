@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package library;
+
+// Le service expose les methodes que le client peut appeler.
+service LibraryService {
+  // Unary : une requete, une reponse.
+  rpc GetBook (GetBookRequest) returns (Book);
+
+  // TODO etape 2 : declarer ListBooks (server streaming).
+  // Elle recoit un ListBooksRequest et renvoie un flux de Book.
+
+  // TODO etape 6 (bonus) : declarer AddBooks (client streaming).
+  // Elle recoit un flux de Book et renvoie un AddBooksResponse.
+}
+
+message Book {
+  int32 id = 1;
+  string title = 2;
+  string author = 3;
+  int32 year = 4;
+}
+
+message GetBookRequest {
+  int32 id = 1;
+}
+
+// TODO etape 2 : creer le message ListBooksRequest
+// avec un seul champ texte nomme "author" (numero 1).
+
+// TODO etape 6 (bonus) : creer le message AddBooksResponse
+// avec un seul champ entier nomme "added_count" (numero 1).

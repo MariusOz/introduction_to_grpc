@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package library;
+
+service LibraryService {
+  rpc GetBook (GetBookRequest) returns (Book);
+  rpc ListBooks (ListBooksRequest) returns (stream Book);
+  rpc AddBooks (stream Book) returns (AddBooksResponse);
+}
+
+message Book {
+  int32 id = 1;
+  string title = 2;
+  string author = 3;
+  int32 year = 4;
+}
+
+message GetBookRequest {
+  int32 id = 1;
+}
+
+message ListBooksRequest {
+  string author = 1;
+}
+
+message AddBooksResponse {
+  int32 added_count = 1;
+}
