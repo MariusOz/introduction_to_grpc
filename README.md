@@ -1,6 +1,5 @@
 # Mini-projet : une bibliothèque en gRPC
 
-Durée : une demi-journée (environ 3h30).
 Prérequis : avoir suivi le cours d'introduction à gRPC et savoir écrire une fonction en JavaScript.
 
 ## Objectif
@@ -57,7 +56,7 @@ Passez à l'étape suivante seulement quand l'étape en cours est entièrement `
 
 ---
 
-## Étape 1 : installation (15 min)
+## Étape 1 : installation
 
 1. Installez Node.js 18 ou plus récent si besoin (`node -v` pour vérifier).
 2. À la racine du projet, lancez :
@@ -80,7 +79,7 @@ Passez à l'étape suivante seulement quand l'étape en cours est entièrement `
 
    Le message `Serveur gRPC demarre sur le port 50051` doit s'afficher. Arrêtez-le avec `Ctrl + C`.
 
-## Étape 2 : le contrat `.proto` (30 min)
+## Étape 2 : le contrat `.proto`
 
 Ouvrez `proto/library.proto`. Ce fichier décrit ce que le serveur sait faire, comme dans l'exemple `UserService` du cours.
 
@@ -102,7 +101,7 @@ Travail demandé :
 
 Vérifiez avec `node check.js 2`.
 
-## Étape 3 : premier appel unary `GetBook` (45 min)
+## Étape 3 : premier appel unary `GetBook`
 
 Mode unary : une requête, une réponse. C'est le mode le plus proche d'un appel REST classique.
 
@@ -145,7 +144,7 @@ npm run client
 
 Vérifiez avec `node check.js 3`.
 
-## Étape 4 : gérer une erreur (20 min)
+## Étape 4 : gérer une erreur
 
 Que se passe-t-il si le client demande le livre `999`, qui n'existe pas ?
 
@@ -160,7 +159,7 @@ N'oubliez pas le `return` après ce `callback`, sinon la fonction continue.
 
 Vérifiez avec `node check.js 4`.
 
-## Étape 5 : server streaming `ListBooks` (45 min)
+## Étape 5 : server streaming `ListBooks`
 
 Mode server streaming : le client envoie une seule requête, le serveur répond avec plusieurs messages, l'un après l'autre.
 
@@ -186,7 +185,7 @@ Complétez `listBooks(client, author)`. Le client écoute des **événements** :
 
 Vérifiez avec `node check.js 5`, puis relancez `npm run client`.
 
-## Étape 6 (bonus) : client streaming `AddBooks` (30 min)
+## Étape 6 (bonus) : client streaming `AddBooks`
 
 Mode client streaming : le client envoie plusieurs messages, le serveur répond une seule fois à la fin.
 
@@ -207,7 +206,7 @@ Pour aller plus loin, écrivez dans `src/client.js` une fonction `addBooks(clien
 
 ---
 
-## Bilan (15 min)
+## Bilan
 
 Répondez en quelques lignes, à l'écrit ou à l'oral :
 
